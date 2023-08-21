@@ -15,9 +15,10 @@ const uniqueList = [
 
 console.log(uniqueList);
 
-const Resturant = () => {
+const Restaurant = () => {
   const [menuData, setMenuData] = useState(Menu);
-  const [menuList, setMenuList] = useState(uniqueList);
+  // Remove the following line
+  // const [menuList, setMenuList] = useState(uniqueList);
 
   const filterItem = (category) => {
     if (category === "All") {
@@ -33,11 +34,11 @@ const Resturant = () => {
   };
 
   return (
-    <>
-      <Navbar filterItem={filterItem} menuList={menuList} />
+    <div className="restaurant">
+      <Navbar filterItem={filterItem} menuList={uniqueList} />
       <MenuCard menuData={menuData} />
-    </>
+    </div>
   );
 };
 
-export default Resturant;
+export default Restaurant;
